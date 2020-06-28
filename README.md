@@ -28,7 +28,7 @@ After [installation](#installation), the bare minimum you need to do is define a
 </html>
 ```
 
-The included [`inertia` snippet]() simply renders an application shell with the current page data encoded as JSON:
+The included [`inertia` snippet](https://github.com/monoeq/kirby-inertia/blob/master/snippets/inertia.php) simply renders an application shell with the current page data encoded as JSON:
 
 ```html
 <div id="app" data-page="{}"></div>
@@ -38,7 +38,7 @@ At this point you can go ahead and build your [Inertia front end](https://inerti
 
 ## Creating Responses
 
-[Inertia responses](https://inertiajs.com/responses) in Kirby are created with Kirby [Controllers](https://getkirby.com/docs/guide/templates/controllers). The only difference with a typical Kirby controller is you return an `Inertia::render` function, instead of an array. This plugin assigns a [`default.php` controller]() for you:
+[Inertia responses](https://inertiajs.com/responses) in Kirby are created with Kirby [Controllers](https://getkirby.com/docs/guide/templates/controllers). The only difference with a typical Kirby controller is you return an `Inertia::render` function, instead of an array. This plugin assigns a [`default.php` controller](https://github.com/monoeq/kirby-inertia/blob/master/controllers/default.php) for you:
 
 ```php
 return function ($page, $site, $kirby) {
@@ -115,8 +115,6 @@ Unlike the Laravel adapter, [Shared Data](https://inertiajs.com/shared-data) in 
 Handle forms in your Kirby controller like you usually would. Just make sure you [redirect to a view](https://inertiajs.com/forms) as explained in the Inertia docs:
 
 ```php
-<?php
-
 return function ($page, $site, $kirby) {
   
   // Form Handling
