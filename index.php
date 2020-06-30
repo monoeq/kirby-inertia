@@ -17,7 +17,7 @@ class_alias('Monoeq\\KirbyInertia\\InertiaSession', 'InertiaSession');
 /**
  * Plugin Definition
  */
-Kirby::plugin('monoeq/kirby-inertia', [
+Kirby::plugin('monoeq/inertia', [
   'options' => [
     'version' => false,
     'shared' => false,
