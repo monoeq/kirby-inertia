@@ -24,7 +24,7 @@ class Inertia {
 
     // Call Lazy Props
     array_walk_recursive($inertia['props'], function (&$prop) {
-      if (is_callable($prop)) {
+      if ($prop instanceof \Closure) {
         $prop = $prop();
       }
     });
