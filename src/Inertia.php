@@ -36,13 +36,13 @@ class Inertia {
 
     // Set Shared
     if ($shared = kirby()->option('monoeq.inertia.shared')) {
-      if (is_callable($shared)) {
+      if ($prop instanceof \Closure) {
         $shared = $shared();
       }
 
       if (is_array($shared)) {
         array_walk_recursive($shared, function (&$prop) {
-          if (is_callable($prop)) {
+          if ($prop instanceof \Closure) {
             $prop = $prop();
           }
         });
