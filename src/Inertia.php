@@ -36,7 +36,7 @@ class Inertia {
 
     // Set Shared
     if ($shared = kirby()->option('monoeq.inertia.shared')) {
-      if ($prop instanceof \Closure) {
+      if ($shared instanceof \Closure) {
         $shared = $shared();
       }
 
