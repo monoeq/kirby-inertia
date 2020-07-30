@@ -29,10 +29,5 @@ Kirby::plugin('monoeq/inertia', [
   'controllers' => [
     'default' => require __DIR__ . '/controllers/default.php'
   ],
-  'templates' => Inertia::assignTemplates(),
-  'pageMethods' => [
-    'inertiaUri' => function () {
-      return $this->isHomePage() ? '/' : '/' . $this->uri();
-    }
-  ]
+  'templates' => Inertia::assignTemplates()
 ]);
