@@ -13,7 +13,7 @@ class Inertia {
         ? $template->name() 
         : $template,
       'props' => $props,
-      'url' => $request -> url() -> toString()
+      'url' => $request->url()->toString()
     ];
 
     // Set Partial
