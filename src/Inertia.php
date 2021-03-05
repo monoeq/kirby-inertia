@@ -7,13 +7,17 @@ use Kirby\Http\Response;
 class Inertia {
   public static function render ($template = 'app', $props = [], $viewData = []) {
     $request = kirby()->request();
+    $url = $request->url()->toString();
+    $path = parse_url($url, PHP_URL_PATH);
+    $query = parse_url($url, PHP_URL_QUERY);
+    $url = $query ? $path . "?" . $query : $path;
 
     $inertia = [
       'component' => is_a($template, 'Kirby\Cms\Template') 
         ? $template->name() 
         : $template,
       'props' => $props,
-      'url' => $request->url()->toString()
+      'url' => $url
     ];
 
     // Set Partial
