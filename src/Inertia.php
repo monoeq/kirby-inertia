@@ -17,7 +17,7 @@ class Inertia {
     ];
 
     // Set Partial
-    $only = array_filter(explode(',', $request->header('X-Inertia-Partial-Data')));
+    $only = array_filter(explode(',', $request->header('X-Inertia-Partial-Data') ?? ""));
     $inertia['props'] = ($only && $request->header('X-Inertia-Partial-Component') === $inertia['component'])
       ? self::getColumns($inertia['props'], $only)
       : $inertia['props'];
